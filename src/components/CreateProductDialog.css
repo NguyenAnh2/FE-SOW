@@ -171,3 +171,44 @@
     padding: 16px;
   }
 }
+
+
+.advancedSearch {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.advancedInputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px;
+}
+
+.advancedButtons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 8px 12px 12px 12px;
+}
+
+.applyButton, .clearButton {
+  cursor: pointer;
+  color: #00d4ff;
+  margin-right: 8px;
+  padding: 8px 14px 4px;
+  border-radius: 8px;
+  font-size: 18px;
+  border: none;
+}
+
+.clearButton {
+  background-color: #6c757d;
+  color: white;
+}
+
+.applyButton {
+  background-color: #007bff;
+  color: white;
+}

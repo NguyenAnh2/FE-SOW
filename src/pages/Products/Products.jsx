@@ -21,6 +21,8 @@ export function Products() {
   const [searchParams, setSearchParams] = useState({});
   const [articleSearch, setArticleSearch] = useState("");
   const [productSearch, setProductSearch] = useState("");
+  const [minPrice, setMinPrice] = useState(0);
+  const [maxPrice, setMaxPrice] = useState(0);
   const [sortConfig, setSortConfig] = useState(DEFAULT_SORT_CONFIG);
   const [openCreateDialog, setOpenCreateDialog] = useState(false);
   const [openOptions, setOpenOptions] = useState(false);
@@ -28,15 +30,22 @@ export function Products() {
   const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
+  const [showAdvanced, setShowAdvanced] = useState(false);
 
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
 
-  const handleSearch = () => {
-    const newSearchParams = {
+  const handleSearch = (params) => {
+    if (params?.maxPrice < params?.minPrice) {
+      alert("Error search");
+      return;
+    }
+    const newSearchParams = params || {
       articleSearch: articleSearch.trim(),
       productSearch: productSearch.trim(),
+      minPrice: params?.minPrice,
+      maxPrice: params?.maxPrice,
     };
 
     setSearchParams(newSearchParams);
@@ -52,6 +61,10 @@ export function Products() {
 
   const fetchProductsWithSort = (params) => {
     dispatch(fetchProducts(params));
+  };
+
+  const handleOpenAdvanced = () => {
+    setShowAdvanced((prev) => !prev);
   };
 
   const handleSort = (columnKey) => {
@@ -161,6 +174,12 @@ export function Products() {
           handleKeyPress={handleKeyPress}
           handleSearch={handleSearch}
           handleExport={handleExport}
+          handleOpenAdvanced={handleOpenAdvanced}
+          showAdvanced={showAdvanced}
+          minPrice={minPrice}
+          setMinPrice={setMinPrice}
+          maxPrice={maxPrice}
+          setMaxPrice={setMaxPrice}
           loading={loading}
         />
         <ProductsTable

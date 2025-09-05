@@ -49,7 +49,7 @@ const DeleteProductDialog = ({
 
         <div className="dialogContent">
           <h3>
-            {translations?.price_list?.are_you_sure} <br/>
+            {translations?.price_list?.delete_confirmation} <br/>
             <span style={{ fontWeight: "bold", fontSize: "18px" }}>{product?.name}</span>
           </h3>
         </div>

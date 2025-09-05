@@ -11,6 +11,13 @@ export const getProductsApi = (searchParams = {}) => {
     params.append("search", searchTerms.join(" "));
   }
 
+  if (searchParams.minPrice) {
+    params.append("minPrice", searchParams.minPrice.trim());
+  }
+  if (searchParams.maxPrice) {
+    params.append("maxPrice", searchParams.maxPrice.trim());
+  }
+
   if (searchParams.sortBy) {
     params.append("sortBy", searchParams.sortBy);
   }
