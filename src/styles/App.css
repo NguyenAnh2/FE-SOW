@@ -1,0 +1,153 @@
+.App {
+  min-height: 100vh;
+  background-image: url('../assets/sverige43.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.App-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  width: 75%;
+  padding-top: 2.5rem;
+  color: white;
+  margin: auto;
+}
+
+.logo {
+  height: 2rem;
+  margin-top: -0.5rem;
+  max-width: 100%;
+}
+
+.logoEn, .logoSv {
+  object-fit: cover;
+  object-position: center center;
+  width: 26px;
+  height: 18px;
+  max-width: 100%;
+  border-radius: 3px;
+}
+
+.navigation-ul {
+  list-style: none;
+  padding: 0;
+  /* margin: 20px 0 0 0; */
+  display: flex;
+  /* gap: 15px; */
+}
+.navigation-ul li a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.1s;
+}
+
+.logoChangeLang {
+  width: 24px;
+}
+
+.textLang {
+  color: black;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.desktop-only {
+  display: block;
+}
+.mobile-only {
+  display: none;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  margin-left: 1rem;
+}
+
+.navigation.mobile-only {
+  display: none;
+  position: absolute;
+  top: 70px;
+  width: fit-content;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 99;
+}
+.navigation.mobile-only.open {
+  display: block;
+}
+
+.lang-popup {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  padding: 8px;
+  z-index: 100;
+}
+.lang-popup div {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 4px;
+}
+
+@media (max-width: 1270px) {
+  .desktop-only {
+    display: none;
+  }
+  .mobile-only {
+    display: block;
+  }
+  .navigation-ul {
+    flex-direction: column;
+  }
+  .navigation-ul li {
+    cursor: pointer;
+    padding: 12px 52px 12px 12px;
+    display: inline-block;
+  }
+  .navigation-ul li:first-child:hover {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    background-color: #f0f0f0;
+  }
+
+  .navigation-ul li:last-child:hover {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background-color: #f0f0f0;
+  }
+  .navigation-ul li:hover {
+    background-color: #f0f0f0;
+  }
+  .navigation-ul li a {
+    color: black;
+  }
+}
