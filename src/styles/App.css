@@ -69,12 +69,12 @@
 
 .header-left {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .header-right {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   position: relative;
 }
 .hamburger {

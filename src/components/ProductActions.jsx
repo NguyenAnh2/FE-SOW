@@ -11,6 +11,7 @@ const ProductActions = ({
   setOpenCreateDialog,
   handleKeyPress,
   handleSearch,
+  handleExport,
   loading,
 }) => {
   return (
@@ -56,7 +57,7 @@ const ProductActions = ({
             <IoIosAddCircle />
           </span>
         </div>
-        <div className="actionBtn printButton">
+        <div className="actionBtn printButton" onClick={handleExport}>
           <button>{translations?.price_list?.print_list}</button>
           <span>
             <IoIosPrint />

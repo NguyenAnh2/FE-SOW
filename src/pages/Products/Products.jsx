@@ -11,6 +11,7 @@ import {
   setSearchFilters,
 } from "../../features/products/productsSlice";
 import "./Products.css";
+import { exportProductsApi } from "../../features/products/api";
 
 export function Products() {
   const dispatch = useDispatch();
@@ -117,6 +118,33 @@ export function Products() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [openOptions]);
 
+  const handleExport = async () => {
+    try {
+      const res = await exportProductsApi({
+        articleSearch: articleSearch.trim(),
+        productSearch: productSearch.trim(),
+        sortBy: "id",
+        order: "asc",
+      });
+
+      const blob = new Blob([res.data], {
+        type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      });
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute(
+        "download",
+        `products_export_${new Date().toISOString().split("T")[0]}.xlsx`
+      );
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    } catch (err) {
+      console.error("Export failed:", err);
+    }
+  };
+
   return (
     <div className="productsContainer">
       <div className="productsContent">
@@ -132,6 +160,7 @@ export function Products() {
           setOpenCreateDialog={setOpenCreateDialog}
           handleKeyPress={handleKeyPress}
           handleSearch={handleSearch}
+          handleExport={handleExport}
           loading={loading}
         />
         <ProductsTable
