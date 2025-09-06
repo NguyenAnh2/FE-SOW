@@ -34,6 +34,7 @@ function App() {
   if (isPopup) {
     return (
       <div className="App">
+        <div className="bg-fixed" aria-hidden />
         <Router>
           <Header
             translations={translations}
