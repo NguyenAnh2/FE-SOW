@@ -34,7 +34,6 @@ function App() {
   if (isPopup) {
     return (
       <div className="App">
-        <div className="bg-fixed" aria-hidden />
         <Router>
           <Header
             translations={translations}
@@ -51,7 +50,16 @@ function App() {
 
   return (
     <div className="App">
-    <div className="bg-fixed" aria-hidden />
+      <div className="background-container">
+        <img 
+          id="background-image" 
+          src="../../sverige43.jpg" 
+          alt="Background"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+      
       {!loading && (
         <Router>
           <Header
@@ -85,7 +93,6 @@ function App() {
             />
             <Route path="/terms" element={<Terms />} />
             <Route path="/products" element={<Products />} />
-
           </Routes>
         </Router>
       )}

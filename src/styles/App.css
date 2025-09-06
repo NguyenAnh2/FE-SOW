@@ -1,23 +1,32 @@
 .App {
-  min-height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  min-height: 100svh;
   position: relative;
   overflow-x: hidden;
 }
 
-.bg-fixed {
+.background-container {
   position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-image: url('../../public/sverige43.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  will-change: transform;
-  transform: translateZ(0);
+  width: 100%;
   height: 100vh;
-  min-height: 100vh;
   height: 100lvh;
-  min-height: 100lvh;
+  z-index: -100;
+  top: 0;
+  left: 0;
+}
+
+#background-image {
+  width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  background-position: center;
+  z-index: -10;
+  transform: translateZ(0px);
+  backface-visibility: hidden;
+  max-width: 100%;
+  height: auto;
 }
 
 .App-header {
@@ -169,29 +178,19 @@
 }
 
 @media (max-width: 899px) {
-  .bg-fixed {
+  .background-container {
     height: 100lvh;
-    min-height: 100lvh;
-    height: calc(100vh + 100px);
-    min-height: calc(100vh + 100px);
-    background-size: cover;
-    background-position: center;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
+    min-height: calc(100vh + 20vw);
   }
-  
-  .App {
-    min-height: 100vh;
-    min-height: 100dvh;
-    position: relative;
+
+  #background-image {
+    min-height: 100lvh;
+    min-height: calc(100vh + 20vw);
   }
 }
 
 @supports not (height: 100lvh) {
-  @media screen and (max-width: 768px) {
-    .bg-fixed {
-      height: calc(100vh + 20vw);
-      min-height: calc(100vh + 20vw);
-    }
+  .background-container {
+    height: calc(100vh + 150px);
   }
 }
