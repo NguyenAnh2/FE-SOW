@@ -50,7 +50,7 @@ function App() {
 
   return (
     <div className="App">
-    <div className="bgFixed" aria-hidden />
+    <div className="bg-fixed" aria-hidden />
       {!loading && (
         <Router>
           <Header
