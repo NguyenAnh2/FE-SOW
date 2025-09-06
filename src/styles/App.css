@@ -6,6 +6,7 @@
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-attachment: fixed !important;
+  position: relative;
 }
 
 .App-header {
@@ -157,6 +158,12 @@
 @media (max-width: 899px) {
   .App {
     background-attachment: scroll !important;
-    min-height: 100dvh;
+    min-height: -webkit-fill-available;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .App {
+    min-height: -webkit-fill-available;
   }
 }
