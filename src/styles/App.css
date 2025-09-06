@@ -1,5 +1,6 @@
 .App {
   min-height: 100vh;
+  min-height: 100dvh;
   background-image: url('../../public/sverige43.jpg');
   background-size: cover;
   background-position: center;
@@ -149,5 +150,11 @@
   }
   .navigation-ul li a {
     color: black;
+  }
+}
+
+@media (max-width: 899px) {
+  .App {
+    background-attachment: scroll;
   }
 }
