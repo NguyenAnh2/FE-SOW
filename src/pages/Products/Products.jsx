@@ -12,6 +12,7 @@ import {
 } from "../../features/products/productsSlice";
 import "./Products.css";
 import { exportProductsApi } from "../../features/products/api";
+import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 
 export function Products() {
   const dispatch = useDispatch();
@@ -94,9 +95,9 @@ export function Products() {
     const fieldName = COLUMN_TO_FIELD_MAP[columnKey];
     if (sortConfig.sortBy === fieldName) {
       return sortConfig.order === "asc" ? (
-        <span className="sort-icon active">↑</span>
+        <span className="sort-icon active"><FaArrowUp /></span>
       ) : (
-        <span className="sort-icon active">↓</span>
+        <span className="sort-icon active"><FaArrowDown /></span>
       );
     }
   };

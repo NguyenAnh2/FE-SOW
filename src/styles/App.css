@@ -1,3 +1,5 @@
+@import "./variables.css";
+
 .App {
   min-height: 100vh;
   min-height: 100dvh;
@@ -36,7 +38,7 @@
   top: 0;
   width: 75%;
   padding-top: 2.5rem;
-  color: white;
+  color: var(--bg-white);
   margin: auto;
   position: relative;
   z-index: 1;
@@ -66,7 +68,7 @@
 }
 .navigation-ul li a {
   text-decoration: none;
-  color: white;
+  color: var(--bg-white);
   cursor: pointer;
   font-weight: 500;
   font-size: 15px;
@@ -106,7 +108,7 @@
   display: none;
   font-size: 24px;
   cursor: pointer;
-  color: white;
+  color: var(--bg-white);
   margin-left: 1rem;
 }
 
@@ -115,7 +117,7 @@
   position: absolute;
   top: 70px;
   width: fit-content;
-  background: white;
+  background: var(--bg-white);
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   z-index: 99;
@@ -128,7 +130,7 @@
   position: absolute;
   top: 100%;
   right: 0;
-  background: #fff;
+  background: var(--bg-white);
   border: 1px solid #ddd;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
@@ -161,16 +163,16 @@
   .navigation-ul li:first-child:hover {
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
-    background-color: #f0f0f0;
+    background-color: var(--border-table);
   }
 
   .navigation-ul li:last-child:hover {
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
-    background-color: #f0f0f0;
+    background-color: var(--border-table);
   }
   .navigation-ul li:hover {
-    background-color: #f0f0f0;
+    background-color: var(--border-table);
   }
   .navigation-ul li a {
     color: black;

@@ -1,3 +1,5 @@
+@import "../styles/variables.css";
+
 .dialogOverlay {
   position: fixed;
   top: 0;
@@ -12,13 +14,13 @@
 }
 
 .createProductDialog {
-  background: white;
+  background: var(--bg-white);
   border-radius: 8px;
   width: 90%;
   max-width: 800px;
   max-height: 90vh;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-lg);
 }
 
 .dialogHeader {
@@ -34,7 +36,7 @@
   margin: 0;
   font-size: 18px;
   font-weight: 600;
-  color: #333;
+  color: var(--text-primary);
 }
 
 .closeButton {
@@ -52,7 +54,7 @@
 
 .closeButton:hover {
   background-color: #e9ecef;
-  color: #333;
+  color: var(--text-primary);
 }
 
 .dialogContent {
@@ -81,7 +83,7 @@
 .formGroup label {
   font-weight: 500;
   margin-bottom: 6px;
-  color: #333;
+  color: var(--text-primary);
   font-size: 14px;
 }
 
@@ -98,7 +100,7 @@
   border-radius: 4px;
   font-size: 14px;
   transition: border-color 0.2s, box-shadow 0.2s;
-  background-color: white;
+  background-color: var(--bg-white);
 }
 
 .formGroup input.error,
@@ -143,12 +145,12 @@
 
 .cancelButton {
   background-color: #6c757d;
-  color: white;
+  color: var(--bg-white);
 }
 
 .createButton {
   background-color: #007bff;
-  color: white;
+  color: var(--bg-white);
 }
 
 @media (max-width: 768px) {
@@ -195,7 +197,7 @@
 
 .applyButton, .clearButton {
   cursor: pointer;
-  color: #00d4ff;
+  color: var(--primary-color);
   margin-right: 8px;
   padding: 8px 14px 4px;
   border-radius: 8px;
@@ -205,10 +207,10 @@
 
 .clearButton {
   background-color: #6c757d;
-  color: white;
+  color: var(--bg-white);
 }
 
 .applyButton {
   background-color: #007bff;
-  color: white;
+  color: var(--bg-white);
 }

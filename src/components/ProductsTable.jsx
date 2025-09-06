@@ -100,7 +100,6 @@ const ProductsTable = ({
                 style={{
                   width: "150px",
                   whiteSpace: "nowrap",
-                  overflow: "hidden",
                   textOverflow: "ellipsis",
                 }}
                 title={product.code}
@@ -112,7 +111,6 @@ const ProductsTable = ({
                 className="nameProduct"
                 style={{
                   whiteSpace: "nowrap",
-                  overflow: "hidden",
                   textOverflow: "ellipsis",
                 }}
                 title={product.name}
@@ -165,6 +163,7 @@ const ProductsTable = ({
                   userSelect: "none",
                   fontWeight: "bold",
                   fontSize: "20px",
+                  border: "none"
                 }}
               >
                 ...

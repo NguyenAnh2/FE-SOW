@@ -1,10 +1,12 @@
+@import "../../styles/variables.css";
+
 .termsContianer {
   margin: auto;
   max-width: 800px;
   padding: 20px;
   font-size: 16px;
   line-height: 1.6;
-  color: #333;
+  color: var(--text-primary);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +17,7 @@
   font-size: 1.125em;
   margin-top: 1.5em;
   border-radius: 3rem;
-  color: white;
+  color: var(--bg-white);
   font-weight: 500;
   padding: 1rem 40px;
   background-color: rgb(8, 158, 30);
@@ -27,7 +29,7 @@
 }
 
 .termsContent {
-  background: #fff;
+  background: var(--bg-white);
   width: 750px;
   max-width: 100%;
   border-radius: 20px;
@@ -35,7 +37,7 @@
   text-align: center;
   transition: width 600ms ease-in-out;
   padding: 40px;
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--text-light);
   font-weight: 500;
   line-height: 1.5em;
   font-size: 14px;
@@ -43,7 +45,7 @@
 
 .termDescription {
   text-align: center;
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--text-light);
   font-weight: 500;
   line-height: 1.5em;
   font-size: 15px;
