@@ -1,10 +1,10 @@
 .App {
-  min-height: 100vh;
-  background-image: url('../../public/sverige43.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  min-height: 100vh !important;
+  background-image: url('../../public/sverige43.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: scroll !important;
 }
 
 .App-header {
@@ -153,10 +153,8 @@
   }
 }
 
-@media (max-width: 899px) {
+@media (min-width: 899px) {
   .App {
-    background-attachment: scroll;
-    background-size: cover;
-    background-position: center top;
+    background-attachment: fixed !important;
   }
 }
