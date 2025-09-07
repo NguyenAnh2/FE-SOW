@@ -2,8 +2,6 @@
 
 .productsContainer {
   margin: auto;
-  max-width: 80%;
-  padding: 20px;
   font-size: 16px;
   line-height: 1.6;
   color: var(--text-primary);
@@ -15,16 +13,15 @@
 .productsContent {
   background: var(--bg-white);
   width: 100%;
-  border-radius: 20px;
-  margin: 2em auto 0;
   text-align: center;
   transition: var(--transition-slow);
   padding: 20px;
+  margin-left: 0;
+  margin-top: 80px;
   color: var(--text-light);
   font-weight: 500;
   line-height: 1.5em;
   font-size: 14px;
-  box-shadow: var(--shadow-md);
 }
 
 .productsActions {
@@ -92,9 +89,9 @@
   align-items: center;
   justify-content: center;
   background-color: var(--bg-white);
-  border-radius: 25px;
+  border-radius: 10px;
   padding: 12px 20px;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
   transition: var(--transition);
   cursor: pointer;
   border: none;
@@ -124,9 +121,15 @@
   font-size: 18px;
 }
 
-.newProductButton span { color: var(--success-color); }
-.printButton span { color: var(--primary-color); }
-.advancedModeButton span { color: var(--warning-color); }
+.newProductButton span {
+  color: var(--success-color);
+}
+.printButton span {
+  color: var(--primary-color);
+}
+.advancedModeButton span {
+  color: var(--warning-color);
+}
 
 .table-container {
   position: relative;
@@ -160,7 +163,7 @@
 }
 
 .products-table td {
-  padding: 12px;
+  padding: 8px;
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
@@ -191,8 +194,7 @@
   border-radius: 8px;
   width: 200px;
   box-shadow: var(--shadow-lg);
-  overflow: hidden;
-  z-index: 1000;
+  z-index: 10000;
 }
 
 .optionsMenu::after {
@@ -217,32 +219,45 @@
 }
 
 @media screen and (max-width: 319px) {
-  .productsContainer { padding: 5px; }
-  .productsContent { padding: 10px; }
-  
+  .productsContent {
+    padding: 10px;
+    width: 100%;
+    margin-left: 0;
+  }
+
   .products-table {
     min-width: 500px;
     font-size: 11px;
   }
-  
+
   .products-table th,
   .products-table td {
     padding: 6px 4px;
     max-width: 100px;
     border-radius: 32px;
   }
-  
-  .nameProduct { width: 50px !important; }
-  
+
+  .nameProduct {
+    width: 50px !important;
+  }
+
   .description,
   .stock,
   .inPrice,
   .articleNumber,
-  .unit { display: none; }
-  
-  .products-table tbody tr:last-child .nameProduct:first-child { position: relative; }
-  .products-table tbody tr:last-child .articleNumber:first-child { position: unset; }
-  .products-table tbody tr:last-child .articleNumber::before { content: none; }
+  .unit {
+    display: none;
+  }
+
+  .products-table tbody tr:last-child .nameProduct:first-child {
+    position: relative;
+  }
+  .products-table tbody tr:last-child .articleNumber:first-child {
+    position: unset;
+  }
+  .products-table tbody tr:last-child .articleNumber::before {
+    content: none;
+  }
   .products-table tbody tr:last-child .nameProduct::before {
     content: "→";
     left: -5px;
@@ -254,64 +269,81 @@
 }
 
 @media screen and (max-width: 480px) {
-  .productsContainer {
-    padding: 10px;
-    max-width: 100%;
-  }
-  
   .productsContent {
     padding: 15px;
-    border-radius: 12px;
-    margin-top: 1em;
+    width: 100%;
+    margin-left: 0;
   }
-  
+
   .productsActions {
     padding: 12px;
     gap: 12px;
   }
-  
-  .searchInputs-improved { gap: 8px; }
-  
+
+  .searchInputs-improved {
+    gap: 8px;
+  }
+
   .search-wrapper input {
     padding: 10px 35px 10px 12px;
     font-size: 13px;
   }
-  
-  .actionButtons { justify-content: space-between; }
-  
+
+  .actionButtons {
+    justify-content: space-between;
+  }
+
   .actionBtn {
-    padding: 8px 10px;
+    padding: 8px 40px;
     min-width: 45px;
     flex: 1;
     max-width: 70px;
   }
-  
-  .actionBtn button { display: none; }
-  .actionBtn span { font-size: 20px; }
-  
+
+  .actionBtn button {
+    display: none;
+  }
+  .actionBtn span {
+    font-size: 20px;
+  }
+
   .products-table {
     font-size: 12px;
     min-width: 600px;
   }
-  
+
   .products-table th,
   .products-table td {
     padding: 8px 6px;
     max-width: 120px;
     border-radius: 32px;
   }
-  
+
   h1 {
     font-size: 20px !important;
     margin-bottom: 8px !important;
   }
-  
-  .nameProduct { width: 50px !important; }
-  .description, .stock, .inPrice, .articleNumber, .unit { display: none; }
-  
-  .products-table tbody tr:last-child .nameProduct:first-child { position: relative; }
-  .products-table tbody tr:last-child .articleNumber:first-child { position: unset; }
-  .products-table tbody tr:last-child .articleNumber::before { content: none; }
+
+  .nameProduct {
+    width: 50px !important;
+  }
+  .description,
+  .stock,
+  .inPrice,
+  .articleNumber,
+  .unit {
+    display: none;
+  }
+
+  .products-table tbody tr:last-child .nameProduct:first-child {
+    position: relative;
+  }
+  .products-table tbody tr:last-child .articleNumber:first-child {
+    position: unset;
+  }
+  .products-table tbody tr:last-child .articleNumber::before {
+    content: none;
+  }
   .products-table tbody tr:last-child .nameProduct::before {
     content: "→";
     left: -5px;
@@ -323,47 +355,69 @@
 }
 
 @media screen and (min-width: 481px) and (max-width: 937px) {
-  .productsContainer { padding: 15px; }
   .productsContent {
     padding: 20px;
-    border-radius: 15px;
+    width: 100%;
+    margin-left: 0;
   }
-  
+
   .productsActions {
     padding: 15px;
     gap: 15px;
   }
-  
-  .searchInputs-improved { gap: 10px; }
-  .actionButtons { justify-content: space-around; }
-  
+
+  .searchInputs-improved {
+    gap: 10px;
+  }
+  .actionButtons {
+    justify-content: space-between;
+  }
+
   .actionBtn {
-    padding: 10px 32px;
+    padding: 10px 60px;
     min-width: 50px;
     flex: 1;
     max-width: 100px;
   }
-  
-  .actionBtn button { display: none; }
-  .actionBtn span { font-size: 22px; }
-  
+
+  .actionBtn button {
+    display: none;
+  }
+  .actionBtn span {
+    font-size: 22px;
+  }
+
   .products-table {
     font-size: 13px;
     min-width: 450px;
   }
-  
+
   .products-table th,
   .products-table td {
-    padding: 10px 8px;
+    padding: 8px;
     border-radius: 32px;
   }
-  
-  .nameProduct { width: 100px !important; }
-  .description, .stock, .inPrice, .articleNumber, .unit { display: none; }
-  
-  .products-table tbody tr:last-child .nameProduct:first-child { position: relative; }
-  .products-table tbody tr:last-child .articleNumber:first-child { position: unset; }
-  .products-table tbody tr:last-child .articleNumber::before { content: none; }
+
+  .nameProduct {
+    width: 100px !important;
+  }
+  .description,
+  .stock,
+  .inPrice,
+  .articleNumber,
+  .unit {
+    display: none;
+  }
+
+  .products-table tbody tr:last-child .nameProduct:first-child {
+    position: relative;
+  }
+  .products-table tbody tr:last-child .articleNumber:first-child {
+    position: unset;
+  }
+  .products-table tbody tr:last-child .articleNumber::before {
+    content: none;
+  }
   .products-table tbody tr:last-child .nameProduct::before {
     content: "→";
     left: -5px;
@@ -375,37 +429,51 @@
 }
 
 @media screen and (min-width: 938px) and (max-width: 1270px) {
-  .productsContainer { max-width: 95%; }
-  
+  .productsContainer {
+    width: 100%;
+  }
   .productsActions {
     flex-direction: row;
     align-items: flex-start;
   }
-  
+
   .searchInputs-improved {
     flex-direction: column;
-    width: 40%;
+    width: 20%;
   }
-  
+
   .actionButtons {
-    width: 60%;
+    width: 80%;
     justify-content: flex-end;
   }
-  
+
   .actionBtn {
     padding: 12px 48px;
     min-width: 50px;
     flex: none;
   }
-  
-  .actionBtn button { display: none; }
-  .actionBtn span { font-size: 24px; }
-  
-  .description, .inPrice { display: none; }
-  
-  .products-table tbody tr:last-child .nameProduct:first-child { position: relative; }
-  .products-table tbody tr:last-child .articleNumber:first-child { position: unset; }
-  .products-table tbody tr:last-child .articleNumber::before { content: none; }
+
+  .actionBtn button {
+    display: none;
+  }
+  .actionBtn span {
+    font-size: 24px;
+  }
+
+  .description,
+  .inPrice {
+    display: none;
+  }
+
+  .products-table tbody tr:last-child .nameProduct:first-child {
+    position: relative;
+  }
+  .products-table tbody tr:last-child .articleNumber:first-child {
+    position: unset;
+  }
+  .products-table tbody tr:last-child .articleNumber::before {
+    content: none;
+  }
   .products-table tbody tr:last-child .nameProduct::before {
     content: "→";
     left: -5px;
@@ -417,43 +485,53 @@
 }
 
 @media screen and (min-width: 1271px) {
-  .productsContainer {
-    max-width: 80%;
-    padding: 30px;
+  .productsContent {
+    width: 85%;
+    margin-left: 15%;
   }
-  
-  .productsContent { padding: 40px; }
-  
+
   .productsActions {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
     gap: 20px;
   }
-  
+
   .searchInputs-improved {
-    width: 40%;
+    width: 20%;
     gap: 15px;
   }
-  
+
   .actionButtons {
     width: 60%;
     justify-content: flex-end;
   }
-  
+
   .actionBtn {
     flex: none;
     min-width: auto;
   }
-  
-  .actionBtn button { display: inline; }
-  .actionBtn span { font-size: 24px; }
-  
-  .nameProduct { width: 200px !important; }
-  
-  .products-table tbody tr:last-child .nameProduct:first-child { position: relative; }
-  .products-table tbody tr:last-child .articleNumber:first-child { position: unset; }
-  .products-table tbody tr:last-child .articleNumber::before { content: none; }
+
+  .actionBtn button {
+    display: inline;
+  }
+  .actionBtn span {
+    font-size: 24px;
+  }
+
+  .nameProduct {
+    width: 200px !important;
+  }
+
+  .products-table tbody tr:last-child .nameProduct:first-child {
+    position: relative;
+  }
+  .products-table tbody tr:last-child .articleNumber:first-child {
+    position: unset;
+  }
+  .products-table tbody tr:last-child .articleNumber::before {
+    content: none;
+  }
   .products-table tbody tr:last-child .nameProduct::before {
     content: "→";
     left: -5px;

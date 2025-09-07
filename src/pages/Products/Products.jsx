@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import CreateProductDialog from "../../components/CreateProductDialog";
 import DeleteProductDialog from "../../components/DeleteProductDialog";
@@ -6,13 +7,12 @@ import EditProductDialog from "../../components/EditProductDialog";
 import ProductActions from "../../components/ProductActions";
 import ProductsTable from "../../components/ProductsTable";
 import { COLUMN_TO_FIELD_MAP, DEFAULT_SORT_CONFIG } from "../../constants";
+import { exportProductsApi } from "../../features/products/api";
 import {
   fetchProducts,
   setSearchFilters,
 } from "../../features/products/productsSlice";
 import "./Products.css";
-import { exportProductsApi } from "../../features/products/api";
-import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 
 export function Products() {
   const dispatch = useDispatch();
@@ -95,9 +95,13 @@ export function Products() {
     const fieldName = COLUMN_TO_FIELD_MAP[columnKey];
     if (sortConfig.sortBy === fieldName) {
       return sortConfig.order === "asc" ? (
-        <span className="sort-icon active"><FaArrowUp /></span>
+        <span className="sort-icon active">
+          <FaArrowUp />
+        </span>
       ) : (
-        <span className="sort-icon active"><FaArrowDown /></span>
+        <span className="sort-icon active">
+          <FaArrowDown />
+        </span>
       );
     }
   };

@@ -1,4 +1,3 @@
-
 const ProductsTable = ({
   products,
   translations,
@@ -20,7 +19,7 @@ const ProductsTable = ({
     setOpenOptions(false);
     setOpenDeleteDialog(true);
   };
-  
+
   return (
     <div className="table-container">
       <table className="products-table">
@@ -154,7 +153,7 @@ const ProductsTable = ({
               >
                 {product.description || "--"}
               </td>
-              
+
               <td
                 className="options-trigger"
                 onClick={(e) => handleOpenOptions(product, e)}
@@ -163,7 +162,8 @@ const ProductsTable = ({
                   userSelect: "none",
                   fontWeight: "bold",
                   fontSize: "20px",
-                  border: "none"
+                  border: "none",
+                  color: "#267DF0",
                 }}
               >
                 ...
@@ -173,28 +173,25 @@ const ProductsTable = ({
         </tbody>
       </table>
       {openOptions && (
-            <div
-              className="optionsMenu"
-              style={{
-                position: "absolute",
-                top: menuPosition.top,
-                left: menuPosition.left,
-              }}
-            >
-              <div
-                className="editProductDialogBtn"
-                onClick={handleOpenEditProduct}
-              >
-                {translations?.price_list?.edit_product}
-              </div>
-              <div
-                className="deleteProductDialogBtn"
-                onClick={handleOpenDeleteProduct}
-              >
-                {translations?.price_list?.delete_product}
-              </div>
-            </div>
-          )}
+        <div
+          className="optionsMenu"
+          style={{
+            position: "absolute",
+            top: menuPosition.top,
+            left: menuPosition.left,
+          }}
+        >
+          <div className="editProductDialogBtn" onClick={handleOpenEditProduct}>
+            {translations?.price_list?.edit_product}
+          </div>
+          <div
+            className="deleteProductDialogBtn"
+            onClick={handleOpenDeleteProduct}
+          >
+            {translations?.price_list?.delete_product}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
