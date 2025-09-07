@@ -1,0 +1,356 @@
+@import "../../styles/variables.css";
+
+.businessContainer {
+  overflow-x: auto;
+}
+.businessContent {
+  display: grid;
+  grid-template-columns: 1fr 100px 0.7fr;
+  gap: 24px;
+  margin: 140px 5% 40px 5%;
+}
+.businessCardLogo {
+  margin-bottom: 20px;
+}
+.businessCard {
+  box-shadow: 0 10px 30px rgba(0, 123, 255, 0.15);
+  border-radius: 32px;
+  padding: 20px 40px;
+  background: white;
+}
+
+.line {
+  position: relative;
+}
+.line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background-color: #d8d8d8;
+}
+
+.formGroupBusiness {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  align-items: center;
+  margin: 24px 0;
+}
+
+.formGroupBusiness input {
+  padding: 8px 24px;
+  border-radius: 24px;
+  border: 1px solid #007bff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.formGroupBusiness input:focus {
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.formGroupBusiness .w-80 {
+  width: 80%;
+}
+
+.formGroupBusiness.row {
+  grid-template-columns: 1fr 2fr;
+}
+
+.formGroupBusiness.row .postcodeInput {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+}
+
+.formGroupBusiness.row .cityInput {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  margin-left: 50px;
+}
+
+.cardTitle {
+  font-size: 24px;
+  position: relative;
+  text-align: center;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.cardTitle::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #d8d8d8;
+}
+
+.cardNote {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.toggleOptions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.toggleOptions span {
+  padding: 8px 48px;
+  border-radius: 24px;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.1);
+  transition: 0.3s ease-in-out;
+  background: white;
+  border: 1px solid transparent;
+}
+
+.toggleOptions span:hover {
+  transform: translateY(-5px);
+}
+
+.toggleOptions span:first-child {
+  margin-right: 12px;
+}
+
+.toggleActive {
+  border: 1px solid #007bff !important;
+  background: #f8f9ff !important;
+}
+
+.actionBtnBusiness {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 24px;
+  padding: 12px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  min-height: 45px;
+  flex: 1;
+  min-width: 120px;
+}
+
+.actionBtnBusiness:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.actionBtnBusiness p {
+  font-size: 18px;
+  margin-right: 12px;
+  margin: 0;
+}
+
+.actionBtnBusiness span {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  color: #78ddff;
+  margin-left: 8px;
+}
+
+.actionRow,
+.toggleRow {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.actionRow p,
+.toggleRow p {
+  margin: 0;
+  font-size: 18px;
+  color: #555;
+}
+
+.cardImage {
+  display: block;
+  margin: 0 auto 16px auto;
+  max-height: 120px;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-top: 20px;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+}
+
+.cardImage.circle {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  max-width: none;
+  max-height: none;
+}
+
+.profileActions {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+@media screen and (max-width: 1400px) {
+  .businessContent {
+    gap: 16px;
+    margin: 140px 3% 40px 3%;
+  }
+
+  .businessCardProfile{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .businessCard {
+    padding: 16px 24px;
+  }
+
+  .formGroupBusiness {
+    grid-template-columns: 140px 1fr;
+    margin: 20px 0;
+  }
+
+  .actionRow,
+  .toggleRow {
+    grid-template-columns: 130px 1fr;
+  }
+
+  .toggleOptions span {
+    padding: 8px 32px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .businessContent {
+    grid-template-columns: 1.2fr 80px 0.8fr;
+    gap: 12px;
+    margin: 140px 2% 40px 2%;
+  }
+  .businessCardLogo {
+    margin-bottom: 0;
+  }
+  .formGroupBusiness {
+    grid-template-columns: 140px 1fr;
+    margin: 16px 0;
+  }
+
+  .formGroupBusiness input {
+    padding: 6px 16px;
+  }
+
+  .cardTitle {
+    font-size: 20px;
+  }
+
+  .actionBtnBusiness p {
+    font-size: 16px;
+  }
+
+  .toggleOptions span {
+    padding: 6px 24px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 1270px) {
+  .businessContent {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .line {
+    display: none;
+  }
+
+  .businessCardPicture {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .actionRow,
+  .toggleRow {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .formGroupBusiness input,
+  .formGroupBusiness .w-80 {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .toggleOptions span {
+    padding: 8px 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .businessContent {
+    margin: 40px 20px;
+  }
+
+  .businessCardPicture {
+    grid-template-columns: 1fr;
+  }
+
+  .formGroupBusiness {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .formGroupBusiness input,
+  .formGroupBusiness .w-80 {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .formGroupBusiness.row {
+    grid-template-columns: 1fr;
+  }
+
+  .formGroupBusiness.row .postcodeInput,
+  .formGroupBusiness.row .cityInput {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+    margin-bottom: 16px;
+  }
+
+  .actionRow,
+  .toggleRow {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .profileActions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .actionBtnBusiness {
+    width: 100%;
+  }
+
+  .toggleOptions {
+    justify-content: center;
+  }
+
+  .toggleOptions span {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}

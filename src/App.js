@@ -9,6 +9,8 @@ import Terms from "./pages/Terms";
 import Us from "./pages/Us";
 import Products from "./pages/Products";
 import HeaderProducts from "./components/HeaderProducts";
+import Business from "./pages/Business";
+import HeaderBusiness from "./components/HeaderBusiness";
 
 function App() {
   const location = useLocation();
@@ -51,21 +53,28 @@ function App() {
   return (
     <div className="App">
       <div className="background-container">
-        {location.pathname !== "/products" && (
-          <img
-            id="background-image"
-            src="../../sverige43.jpg"
-            alt="Background"
-            loading="eager"
-            decoding="async"
-          />
-        )}
+        {location.pathname !== "/products" ||
+          (location.pathname !== "/business" && (
+            <img
+              id="background-image"
+              src="../../sverige43.jpg"
+              alt="Background"
+              loading="eager"
+              decoding="async"
+            />
+          ))}
       </div>
 
       {!loading && (
         <>
           {location.pathname === "/products" ? (
             <HeaderProducts
+              translations={translations}
+              lang={lang}
+              handleSelectLang={handleSelectLang}
+            />
+          ) : location.pathname === "/business" ? (
+            <HeaderBusiness
               translations={translations}
               lang={lang}
               handleSelectLang={handleSelectLang}
@@ -102,6 +111,7 @@ function App() {
             />
             <Route path="/terms" element={<Terms />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/business" element={<Business />} />
           </Routes>
         </>
       )}
