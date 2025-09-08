@@ -7,10 +7,7 @@
   display: grid;
   grid-template-columns: 1fr 100px 0.7fr;
   gap: 24px;
-  margin: 140px 5% 40px 5%;
-}
-.businessCardLogo {
-  margin-bottom: 20px;
+  margin: 140px 7% 40px 7%;
 }
 .businessCard {
   box-shadow: 0 10px 30px rgba(0, 123, 255, 0.15);
@@ -72,7 +69,7 @@
 }
 
 .cardTitle {
-  font-size: 24px;
+  font-size: 22px;
   position: relative;
   text-align: center;
   padding-bottom: 20px;
@@ -90,10 +87,8 @@
 }
 
 .cardNote {
-  color: #666;
   font-size: 16px;
   margin-bottom: 20px;
-  text-align: center;
 }
 
 .toggleOptions {
@@ -110,6 +105,8 @@
   transition: 0.3s ease-in-out;
   background: white;
   border: 1px solid transparent;
+  flex: 1;
+  text-align: center;
 }
 
 .toggleOptions span:hover {
@@ -147,13 +144,13 @@
 }
 
 .actionBtnBusiness p {
-  font-size: 18px;
+  font-size: 16px;
   margin-right: 12px;
   margin: 0;
 }
 
 .actionBtnBusiness span {
-  font-size: 20px;
+  font-size: 18px;
   display: flex;
   align-items: center;
   color: #78ddff;
@@ -171,7 +168,7 @@
 .actionRow p,
 .toggleRow p {
   margin: 0;
-  font-size: 18px;
+  font-size: 16px;
   color: #555;
 }
 
@@ -204,13 +201,17 @@
   gap: 10px;
 }
 
+.businessCardLogo {
+  margin-bottom: 24px;
+}
+
 @media screen and (max-width: 1400px) {
   .businessContent {
     gap: 16px;
     margin: 140px 3% 40px 3%;
   }
 
-  .businessCardProfile{
+  .businessCardProfile {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -241,7 +242,7 @@
     margin: 140px 2% 40px 2%;
   }
   .businessCardLogo {
-    margin-bottom: 0;
+    margin-bottom: 24px;
   }
   .formGroupBusiness {
     grid-template-columns: 140px 1fr;
@@ -275,7 +276,9 @@
   .line {
     display: none;
   }
-
+  .businessCardLogo {
+    margin-bottom: 0;
+  }
   .businessCardPicture {
     display: grid;
     grid-template-columns: 1fr 1fr;
