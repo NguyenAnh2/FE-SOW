@@ -53,16 +53,16 @@ function App() {
   return (
     <div className="App">
       <div className="background-container">
-        {location.pathname !== "/products" ||
-          (location.pathname !== "/business" && (
+        {location.pathname !== "/products" &&
+          location.pathname !== "/business" && (
             <img
               id="background-image"
-              src="../../sverige43.jpg"
+              src="/sverige43.jpg"
               alt="Background"
               loading="eager"
               decoding="async"
             />
-          ))}
+          )}
       </div>
 
       {!loading && (
