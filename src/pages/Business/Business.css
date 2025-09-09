@@ -217,6 +217,7 @@
     justify-content: space-around;
   }
   .businessCard {
+    margin-top: 84px;
     padding: 16px 24px;
   }
 
@@ -303,6 +304,7 @@
 
 @media screen and (max-width: 768px) {
   .businessContent {
+    margin: 140px 7% 40px 7%;
     margin: 40px 20px;
   }
 
